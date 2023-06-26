@@ -1,0 +1,11 @@
+{
+ "name": "App",
+ "icons": [
+  {
+   "src": "/icons8-microsoft-todo-2019-windows-11-color-72.png",
+   "sizes": "72x72",
+   "type": "image/png",
+   "density": "1.5"
+  }
+ ]
+}

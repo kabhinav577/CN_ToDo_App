@@ -3,6 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="./favicon/icons8-microsoft-todo-2019-windows-11-color-57.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="72x72"
+      href="./favicon/icons8-microsoft-todo-2019-windows-11-color-16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="57x57"
+      href="./favicon/icons8-microsoft-todo-2019-windows-11-color-72.png"
+    />
     <title>ToDo List app</title>
     <link
       rel="stylesheet"
@@ -15,56 +33,44 @@
   </head>
   <body>
     <div class="container">
-        <h1>TODO App</h1>
+      <h1>TODO App</h1>
       <form action="" class="todo-add" id="todo-form">
-        <div class="icon"><i class="fa-solid fa-list"></i></div>
-        <input type="text" class="text-input" name="task-name" placeholder="Type your ToDo List"/>
+        <div class="icon"><img src="todo-96.svg" alt="" /></div>
+        <input
+          type="text"
+          class="text-input"
+          name="task-name"
+          placeholder="Type your ToDo List"
+        />
         <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
       </form>
 
       <ul class="stats">
         <li>
-            <span>Remaining</span>
-            <span id="remaining-tasks">0</span>
+          <span>Remaining</span>
+          <span id="remaining-tasks">0</span>
         </li>
         <li>
-            <span>Completed</span>
-            <span id="completed-tasks">0</span>
+          <span>Completed</span>
+          <span id="completed-tasks">0</span>
         </li>
         <li>
-            <span>Total</span>
-            <span id="total-tasks">0</span>
+          <span>Total</span>
+          <span id="total-tasks">0</span>
         </li>
       </ul>
 
-      <ul class="todos">
-        <li>
-          <div>
-            <div class="round">
-              <input type="checkbox" checked id="checkbox" />
-              <label for="checkbox"></label>
-            </div>
-            <span>Task 1</span>
-          </div>
+      <ul class="todos"></ul>
 
-          <button title="Remove task" class="remove-task">
-            <i class="fa-regular fa-circle-xmark"></i>
-          </button>
-        </li>
-        <li class="complete">
-          <div>
-            <div class="round">
-              <input type="checkbox" checked id="checkbox" />
-              <label for="checkbox"></label>
-            </div>
-            <span>Task 2</span>
-          </div>
-
-          <button title="Remove task" class="remove-task">
-            <i class="fa-regular fa-circle-xmark"></i>
-          </button>
-        </li>
-      </ul>
+      <footer>
+        Design by
+        <a
+          href="https://www.linkedin.com/in/krishna-kant-singh-ab391a1b1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Krishna kant Singh</a
+        >
+      </footer>
     </div>
     <script src="script.js"></script>
   </body>
