@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon for this TODO APP  -->
     <link
       type="image/png"
       sizes="16x16"
@@ -22,6 +23,7 @@
       href="./favicon/icons8-microsoft-todo-2019-windows-11-color-72.png"
     />
     <title>ToDo List app</title>
+    <!-- Using Font Awesome for icon  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -29,11 +31,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Using EXternal file for styling CSS  -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- this is container which all conatains element of web -->
     <div class="container">
       <h1>TODO App</h1>
+      <!-- Creating form tag and inside using input for text and button for Submit  -->
       <form action="" class="todo-add" id="todo-form">
         <div class="icon"><img src="todo-96.svg" alt="" /></div>
         <input
@@ -45,6 +50,7 @@
         <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
       </form>
 
+      <!-- All stats of TODO List app  -->
       <ul class="stats">
         <li>
           <span>Remaining</span>
@@ -60,6 +66,7 @@
         </li>
       </ul>
 
+      <!-- this is main part which is Created in javascript file using create DOM element and append inside it  -->
       <ul class="todos"></ul>
 
       <footer>
@@ -72,6 +79,7 @@
         >
       </footer>
     </div>
+    <!-- here attching javascript file  -->
     <script src="script.js"></script>
   </body>
 </html>

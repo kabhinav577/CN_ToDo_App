@@ -1,16 +1,12 @@
 // DOM Elements
 const todoForm = document.querySelector("#todo-form");
-
 const todoList = document.querySelector(".todos");
-
 const totalTasks = document.querySelector("#total-tasks");
-
 const completedTasks = document.querySelector("#completed-tasks");
-
 const remainingTasks = document.querySelector("#remaining-tasks");
-
 const mainInput = document.querySelector("#todo-form input");
 
+// Creating tasks  Array or object for Storing TODO Tasks
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // for when page is reload then show from localstorage
@@ -20,7 +16,7 @@ if(localStorage.getItem('tasks')) {
     })
 }
 
-// Extracting the input value and sending to create task function
+// Extracting the input value and sending to createTask function
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -28,12 +24,14 @@ todoForm.addEventListener("submit", (e) => {
 
   if (inputValue == "") return;
 
+  // Creating task Object with id , ID which is using dateTime function
   const task = {
     id: new Date().getTime(),
     name: inputValue,
     isCompleted: false,
   };
 
+  // Pushing in tasks Array and Store in LOCAL STORAGE
   tasks.push(task);
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
@@ -42,16 +40,17 @@ todoForm.addEventListener("submit", (e) => {
 });
 
 
-// Create A New TODO Task
+// Create A New TODO Task Function
 function createTask(task) {
-  const taskEl = document.createElement("li");
+  const taskEl = document.createElement("li");  // Creating Li for storing TODO Task
 
-  taskEl.setAttribute('id', task.id);
+  taskEl.setAttribute('id', task.id); // setting id of li from task object
 
-  if(task.isCompleted) {
+  if(task.isCompleted) {  // when task is Complete then add class which name is Complete
     taskEl.classList.add('complete');
   }
 
+  // Creating all HTML to show TODO Task 
   const taskElMarkup = `
     <div>
       <input type="checkbox" id="${task.id}" name="tasks" ${task.isCompleted ? "checked" : ""}/>
@@ -65,11 +64,12 @@ function createTask(task) {
 
     taskEl.innerHTML = taskElMarkup;
 
-    todoList.appendChild(taskEl);
-    countTasks();
+    todoList.appendChild(taskEl); // Pushing in ul 
+    countTasks();  // Counting the tasks
 };
 
-// for reomove task form todolist
+
+// For reomove task form TODO list
 todoList.addEventListener('click', (e)=> {
     if(e.target.classList.contains('remove-task') || e.target.parentElement.classList.contains('remove-task') || e.target.parentElement.parentElement.classList.contains('remove-task')) {
         const taskId = e.target.closest('li').id;
@@ -79,7 +79,7 @@ todoList.addEventListener('click', (e)=> {
 })
 
 
-
+// Counting all Remaining , Completed and Total task
 function countTasks() {
     const completedTasksArray = tasks.filter((task)=> task.isCompleted === true)
 
@@ -90,39 +90,46 @@ function countTasks() {
     remainingTasks.textContent = tasks.length - completedTasksArray.length;
 }
 
-// remove Task Function
+// Remove TODO Task Function 
 function removeTask(taskId) {
+    // here filter out element which is not same with ID
     tasks = tasks.filter((task)=> task.id !== parseInt(taskId))
 
+    // Update local storage
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
+    // Remove element from DOM
     document.getElementById(taskId).remove();
 
     countTasks();
 }
 
-// updating task in todo list
+// Updating TODO Task  Function
 todoList.addEventListener('input', (e)=> {
     const taskId = e.target.closest('li').id;
     console.log(taskId)
     updateTask(taskId, e.target);
 })
 
+// Updating TODO task and check box toggle Function
 function updateTask(taskId, el) {
+    // Finding the id from tasks arrays
     const task =  tasks.find((task)=> task.id === parseInt(taskId));
 
+    // here check element has Attribute which name is contentEditable then edit the task value
     if(el.hasAttribute('contenteditable')) {
         task.name = el.textContent;
     }else {
         const span = el.nextElementSibling;
-        const parent = el.closest('li');
+        const parent = el.closest('li'); // extarcting LI DOM
+        // console.log(parent)  
 
         task.isCompleted = !task.isCompleted;
 
-        if(task.isCompleted) {
+        if(task.isCompleted) {   // when isCompletd true the remove edit todo task and add complete class otherwise using viceversa
             span.removeAttribute('contenteditable');
             parent.classList.add('complete');
-        } else {
+        } else { 
             span.setAttribute('contenteditable', 'true');
             parent.classList.remove('complete')
         }

@@ -1,7 +1,9 @@
+/*------ USING POPPIN and  BELANOSIMA FONT*/
 @import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Poppins:wght@500;700&display=swap");
 /* font-family: 'Belanosima', sans-serif;
 font-family: 'Poppins', sans-serif; */
 
+/*----- GLOBAL VARIAABLES for non repetting myself for repeatable code -----*/
 :root {
   --color-body: #e8f3f8;
   --color-disabled: #d2e7f1;
@@ -24,6 +26,7 @@ body {
   background-color: rgb(149, 201, 222);
 }
 
+/*---------- Styling Container  -----------*/
 .container {
   display: flex;
   flex-direction: column;
@@ -37,6 +40,16 @@ body {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
+h1 {
+  font-size: 3rem;
+  padding: 10px 0 20px 0;
+  background: -webkit-linear-gradient(#bd8282, #554c4c);
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*--------- style all TODO form and button Which is inside in one div  ----*/
 .todo-add {
   display: flex;
   justify-content: space-around;
@@ -48,18 +61,12 @@ body {
   padding: 5px 5px;
 }
 
-h1 {
-  font-size: 3rem;
-  padding: 10px 0 20px 0;
-  background: -webkit-linear-gradient(#bd8282, #554c4c);
-  text-align: center;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 .todo-add img {
     width: 30px;
     height: 30px;
 }
+
+/*--------- FORM , INPUT AND BUTTON STYLE  ---------*/
 form input[type='text'] {
   width: 80%;
   height: 45px;
@@ -69,6 +76,7 @@ form input[type='text'] {
   padding: 5px;
   background-color: #dfd5d8;
 }
+
 form button {
   border: none;
   outline: none;
@@ -83,7 +91,7 @@ form button i {
 
 
 
-/* stats Detail */
+/*--------- Stats Details ----------*/
 .stats {
   margin-top: 1rem;
   display: flex;
@@ -112,15 +120,15 @@ form button i {
   border-bottom-right-radius: var(--global-radius);
 }
 
-/* Check BOX Style  */
+
+/*-------- Check BOX Style  ---------*/
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
 }
 
 
-/* TODO LIST */
-
+/*----------- TODO LIST  LI -----------*/
 .todos {
   margin: 2rem;
   width: 90%;
@@ -165,6 +173,7 @@ input[type="checkbox"] {
   background-color: #eddddd;
 }
 
+/* -------- FOOTER ----------*/
 footer {
     margin: 10px auto;
 }
