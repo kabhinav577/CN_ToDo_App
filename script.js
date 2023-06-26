@@ -1,4 +1,4 @@
-// DOM Elements
+// Extarcting DOM Elements in Variables
 const todoForm = document.querySelector("#todo-form");
 const todoList = document.querySelector(".todos");
 const totalTasks = document.querySelector("#total-tasks");
@@ -79,16 +79,7 @@ todoList.addEventListener('click', (e)=> {
 })
 
 
-// Counting all Remaining , Completed and Total task
-function countTasks() {
-    const completedTasksArray = tasks.filter((task)=> task.isCompleted === true)
 
-    totalTasks.textContent = tasks.length;
-
-    completedTasks.textContent = completedTasksArray.length;
-
-    remainingTasks.textContent = tasks.length - completedTasksArray.length;
-}
 
 // Remove TODO Task Function 
 function removeTask(taskId) {
@@ -104,12 +95,15 @@ function removeTask(taskId) {
     countTasks();
 }
 
+
+
 // Updating TODO Task  Function
 todoList.addEventListener('input', (e)=> {
     const taskId = e.target.closest('li').id;
-    console.log(taskId)
+    // console.log(taskId)
     updateTask(taskId, e.target);
 })
+
 
 // Updating TODO task and check box toggle Function
 function updateTask(taskId, el) {
@@ -138,4 +132,15 @@ function updateTask(taskId, el) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
     countTasks();
+}
+
+// Counting all Remaining , Completed and Total task
+function countTasks() {
+    const completedTasksArray = tasks.filter((task)=> task.isCompleted === true)
+
+    totalTasks.textContent = tasks.length;
+
+    completedTasks.textContent = completedTasksArray.length;
+
+    remainingTasks.textContent = tasks.length - completedTasksArray.length;
 }
