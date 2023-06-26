@@ -1,20 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo List app</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <form action="">
-            <div class="icon"><i class="fa-solid fa-list"></i></div>
-            <input type="text" class="text-input">
-            <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
-        </form>
+        <h1>TODO App</h1>
+      <form action="" class="todo-add" id="todo-form">
+        <div class="icon"><i class="fa-solid fa-list"></i></div>
+        <input type="text" class="text-input" name="task-name" placeholder="Type your ToDo List"/>
+        <button type="submit"><i class="fa-solid fa-circle-plus"></i></button>
+      </form>
+
+      <ul class="stats">
+        <li>
+            <span>Remaining</span>
+            <span id="remaining-tasks">0</span>
+        </li>
+        <li>
+            <span>Completed</span>
+            <span id="completed-tasks">0</span>
+        </li>
+        <li>
+            <span>Total</span>
+            <span id="total-tasks">0</span>
+        </li>
+      </ul>
+
+      <ul class="todos">
+        <li>
+          <div>
+            <div class="round">
+              <input type="checkbox" checked id="checkbox" />
+              <label for="checkbox"></label>
+            </div>
+            <span>Task 1</span>
+          </div>
+
+          <button title="Remove task" class="remove-task">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+        </li>
+        <li class="complete">
+          <div>
+            <div class="round">
+              <input type="checkbox" checked id="checkbox" />
+              <label for="checkbox"></label>
+            </div>
+            <span>Task 2</span>
+          </div>
+
+          <button title="Remove task" class="remove-task">
+            <i class="fa-regular fa-circle-xmark"></i>
+          </button>
+        </li>
+      </ul>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
