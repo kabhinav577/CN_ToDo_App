@@ -21,9 +21,10 @@ font-family: 'Poppins', sans-serif; */
   list-style-type: none;
 }
 
+
 body {
   font-family: "Belanosima", sans-serif;
-  background-color: rgb(149, 201, 222);
+  background-color: rgb(178, 211, 223);
 }
 
 /*---------- Styling Container  -----------*/
@@ -37,9 +38,20 @@ body {
   border-radius: 10px;
   width: 50%;
   background-color: var(--color-body);
-  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+}
+.heading img {
+  width: 40px;
+  height: 40px;
+  margin: 0 15px 13px 0;
+}
 h1 {
   font-size: 3rem;
   padding: 10px 0 20px 0;
@@ -62,12 +74,12 @@ h1 {
 }
 
 .todo-add img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 /*--------- FORM , INPUT AND BUTTON STYLE  ---------*/
-form input[type='text'] {
+form input[type="text"] {
   width: 80%;
   height: 45px;
   border: none;
@@ -88,8 +100,6 @@ form button i {
   cursor: pointer;
   border-bottom: none;
 }
-
-
 
 /*--------- Stats Details ----------*/
 .stats {
@@ -120,13 +130,11 @@ form button i {
   border-bottom-right-radius: var(--global-radius);
 }
 
-
 /*-------- Check BOX Style  ---------*/
 input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
-
 
 /*----------- TODO LIST  LI -----------*/
 .todos {
@@ -137,7 +145,7 @@ input[type="checkbox"] {
 .todos li {
   background-color: white;
   border-radius: 10px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   padding: 1.5rem 1rem;
   display: flex;
   font-size: 20px;
@@ -196,17 +204,16 @@ input[type="checkbox"] {
 
 /* -------- FOOTER ----------*/
 footer {
-    margin: 10px auto;
+  margin: 10px auto;
 }
 
 footer a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 footer a:hover {
-    color: rgb(205, 50, 50);
+  color: rgb(205, 50, 50);
 }
-
 
 /* Adding media query to make responsive*/
 @media (max-width: 768px) {
